@@ -1,3 +1,7 @@
-const mongo = require("./config/mongoDb");
+const mongoose = require("./config/mongoDb");
 
-module.exports = mongo;
+const userSchema = require("./schemas/UserSchema");
+
+mongoose.model("user", userSchema);
+
+module.exports = mongoose;
