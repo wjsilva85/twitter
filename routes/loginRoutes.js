@@ -9,5 +9,8 @@ const userController = require("../controllers/userController");
 // app.set("views", "views"); // set the views directory
 
 router.post("/", userController.login);
+router.get("/", (req, res, next) => {
+  res.status(200).render("login"); // send a response
+});
 
 module.exports = router;

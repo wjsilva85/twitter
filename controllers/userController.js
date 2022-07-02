@@ -67,7 +67,7 @@ exports.login = (req, res, next) => {
         res.status(400).render("login", payload); // send a response
       } else {
         payload.userLoggedIn = user;
-        return bcrypt.compare(payload.logPassword, user.password);
+        return bcrypt.compare(payload.password, user.password);
       }
     })
     .then((isValid) => {
