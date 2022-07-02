@@ -40,7 +40,7 @@ module.exports = new Schema(
       required: true,
       trim: true,
       minlength: 6,
-      maxlength: 15,
+      maxlength: 120,
     },
     profilePicture: {
       type: String,
