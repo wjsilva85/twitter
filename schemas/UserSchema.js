@@ -44,7 +44,7 @@ module.exports = new Schema(
     },
     profilePicture: {
       type: String,
-      default: "/images/default-profile-picture.png",
+      default: "/images/default-profile-picture.jpeg",
     },
   },
   { timestamps: true }
