@@ -78,7 +78,7 @@ exports.login = (req, res, next) => {
       } else {
         req.session.user = _user;
         payload.success = "Login successful";
-        res.status(200).render("home", payload); // send a response
+        res.redirect("/"); // send a response
       }
     })
     .catch((err) => {
@@ -86,4 +86,9 @@ exports.login = (req, res, next) => {
       payload.error = "User not found";
       res.status(500).render("login", payload); // send a response
     });
+};
+
+exports.logout = (req, res, next) => {
+  req.session.destroy();
+  res.redirect("/login"); // send a response
 };
